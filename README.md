@@ -37,7 +37,7 @@ https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 
 ### PR 基本格式规范
 
-> :warning: 注意，目前我们约定：
+> 注意，目前我们约定：
 > 如果一个楼盘有多张图片作为支撑材料，则在该省份/城市文件内再新建一个以该楼盘命名的文件夹存放，并加上"_"前缀以示区别，例如`images/广西/桂林/_桂林融创文旅城N4地块`，其下存放了两张图片，否则无法通过本地图片验证脚本[validateLocalImages.ts](development/backend/validateLocalImages.ts)
 
 - 1、新增项目信息，请务必修改 `README.md` 文件，以及修改全国、省、市总数！否则不予通过
@@ -47,7 +47,7 @@ https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 
 ## 开发相关
 
-[**=== 开发指引 ===**](./development/README.md)
+[**--> 开发指引**](./development/README.md)
 
 ### 数据校验工作
 

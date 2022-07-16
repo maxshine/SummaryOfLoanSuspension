@@ -22,6 +22,3 @@ export const DATA_SOURCE_DIR = path.join(DATA_DIR, "source")
 export const DATA_PROPERTIES_PATH = path.join(DATA_GENERATED_DIR, "properties.json")
 export const DATA_VISUALIZATION_PATH = path.join(DATA_GENERATED_DIR, "cities-for-visualization.json")
 
-// files
-export const IMAGE_TYPES = ['png', 'jpg', 'jpeg'] as const
-export type IMAGE_TYPE = typeof IMAGE_TYPES[number]

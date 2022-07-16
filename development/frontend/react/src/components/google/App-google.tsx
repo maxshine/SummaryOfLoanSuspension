@@ -8,9 +8,8 @@ import theme from "./theme-dark-simple-2.json"
 import './google-map.css'
 
 import {AddressWithCount} from "../../ds";
-import citiesForVisualization_ from "../../data/cities-for-visualization.json"
+import citiesForVisualization from "../../data/cities-for-visualization.json"
 
-const citiesForVisualization: AddressWithCount[] = citiesForVisualization_
 
 const mapContainerStyle = {
     height: "800px",
