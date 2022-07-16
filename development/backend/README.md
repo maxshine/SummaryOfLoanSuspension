@@ -3,6 +3,7 @@
 ## TODO
 
 - [x] 确保每张图片都能与楼盘对应
+- [x] 增加了可视化脚本
 
 ## 楼盘接口
 
@@ -120,6 +121,12 @@ output:
   },
   ...
 }
+```
+
+## 生成地图
+
+```shell
+ts-node development/backend/google-map/genMap.ts
 ```
 
 ## 数据来源

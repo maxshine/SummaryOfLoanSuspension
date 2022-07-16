@@ -21,4 +21,3 @@ export const DATA_GENERATED_DIR = path.join(DATA_DIR, "generated")
 export const DATA_SOURCE_DIR = path.join(DATA_DIR, "source")
 export const DATA_PROPERTIES_PATH = path.join(DATA_GENERATED_DIR, "properties.json")
 export const DATA_VISUALIZATION_PATH = path.join(DATA_GENERATED_DIR, "cities-for-visualization.json")
-
