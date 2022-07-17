@@ -4,7 +4,11 @@ import {GOOGLE_MAP_API_KEY} from "../../const";
 import {AddressWithCount} from "../../ds";
 import {MyCircle} from "./MyCircle";
 
+<<<<<<< HEAD
 import theme from "./theme-dark-simple-2.json" // custom style, ref: https://mapstyle.withgoogle.com/
+=======
+import theme from "../../data/google-theme.json" // custom style, ref: https://mapstyle.withgoogle.com/
+>>>>>>> fe445591db84c05a0a89db8f010c6d36194dddee
 import citiesForVisualization from "../../data/cities-for-visualization.json" // a symbol link to city data
 
 import './google-map.css' // disable google footnote, ref: https://stackoverflow.com/a/22581969/9422455
