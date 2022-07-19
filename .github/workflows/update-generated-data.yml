@@ -15,34 +15,46 @@ jobs:
     strategy:
       matrix:
         node-version: [ 18.x ]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     defaults:
       run:
-        working-directory: 'development/backend/'
+        working-directory: 'development/backend/src'
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: ( 1/7 ) setup environment for git
+        uses: actions/checkout@v3
+
+      - name: ( 2/7 ) setup environemnt for node
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
           cache-dependency-path: 'development/backend/package-lock.json'
-      - run: npm i && npm i -g ts-node && cd src && ts-node analyze.ts && ts-node genCitiesForVisualization.ts
-      - name: check for changes
+
+      - name: ( 3/7 ) setup environment for project
+        run: npm i && npm i -g ts-node
+
+      - name: ( 4/7 ) generate and validate properties data
+        run: |
+          ts-node genPropertiesFromReadme.ts &&   # 生成停贷数据（同时生成tree与flat）
+          ts-node validateLocalImages.ts     &&   # 验证本地图片索引
+          ts-node genMdFromPropertiesTree.ts      # tree --> 新的readme
+
+      - name: ( 5/7 ) genrate map to ensure latest
+        run: |
+          cd visualization
+          ts-node genCities.ts      &&            # flat --> 城市数据
+          ts-node genMap.ts -t all                # 城市数据 --> 地图
+
+      - name: ( 6/7 ) check for changes
         run: |
           if git diff --exit-code; then
             echo "has_changes=false" >> $GITHUB_ENV
           else
             echo "has_changes=true" >> $GITHUB_ENV
           fi
-      - name: regenerate map
-        if: ${{ env.has_changes == 'true' }}
-        run: |
-          ts-node genMap.ts
-          ts-node genMap.ts -t google-theme-dark.json
-          ts-node genMap.ts -t google-theme-light.json
-      - name: Commit and Create Pull Request
+
+      - name: ( 7/7 ) commit and pr if local changes detected
         if: ${{ env.has_changes == 'true' }}
         uses: peter-evans/create-pull-request@v4
         with:
