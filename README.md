@@ -44,10 +44,13 @@ sh ./run-validate.sh
    本项目已集成CI，将自动核验数据的统计准确性，具体见：[backend-nodejs](./development/backend/nodejs/README.md)
 
 2. :rocket: 20220719
-   已实现开发商数据抓取，但还需要更多的单元测试与样本测试，具体见：[backend-python](./development/backend/py/README.md)
+   已实现开发商数据抓取，但还需要更多的单元测试与样本测试，具体见：[爬虫开发者急集令🚀 #950](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions/950)
 
-3. :zap: 20220720
-   更新：本readme文档应大家的呼应，已升级格式为允许（且推荐）每个楼盘换行了，这是由于markdown本身支持换单行不拆句，因此在前端渲染的时候我们依旧能看到比较齐整与密集的效果，这样既在可读性上友好，又在PR编辑上友好，一举两得！尤其适合有格式化文档习惯的朋友，在之前的文档规范下完全不能格式化文档，否则就断行了，现在则可以无脑格了！
+3. :zap: 20220720 升级 readme 文档，已支持（与推荐）换行编辑楼盘信息
+
+4. 20220721：
+   1. :rocket: 增加了一个基于 dotnet 实现的 GitHub proxy，详见 [#953](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/953)
+   2. :sparkles: 升级了地图，显示中文水印，在 readme 中直接查看即可
 
 ## 数据概要
 
@@ -95,7 +98,7 @@ sh ./run-validate.sh
 - **通州区（1）：** 
   [禹洲朗廷湾（朗廷雅苑）](images/北京/北京禹洲朗廷湾.jpeg)
 
-### 重庆市 [ 13 ]
+### 重庆市 [ 12 ]
 
 - **巴南区（2）：** 
   恒大新城四期,
@@ -107,8 +110,7 @@ sh ./run-validate.sh
   恒大名都（7月）
 - **沙坪坝区（1）：** 
   [佳兆业·凤鸣水岸（9月）](images/重庆/重庆_佳兆业凤鸣水岸.jpg)
-- **万州区（2）：** 
-  万萃城二期（12月）,
+- **万州区（1）：** 
   万萃城二期（12月）
 - **渝北区（5）：** 
   芙蓉公馆（9月）,
@@ -330,7 +332,7 @@ sh ./run-validate.sh
 - **孝感市（1）：** 
   润达·壹号广场
 
-### 湖南省 [ 32 ]
+### 湖南省 [ 33 ]
 
 - **常德市（1）：** 
   [汉寿县山湖海上城二期、三期](images/湖南/常德市汉寿县山湖海上城二期、三期全体业主停贷告知书.jpeg)
@@ -375,6 +377,8 @@ sh ./run-validate.sh
   [华晨神农府](images/湖南/株洲市华晨神农府全体业主强制停货告知书.jpeg),
   华晨神农湾,
   绿地城际空间站
+- **郴州市（1）：**
+  [郴州鲲鹏商贸城](images/湖南/郴州/郴州鲲鹏商贸城强制停贷通知.png)
 
 ### 吉林省 [ 1 ]
 
@@ -607,6 +611,10 @@ sh ./run-validate.sh
 
 ## 其他曝光
 
+- 天渝骄园(延期14个月), 梁溪本源(基本停工), 协信城立方(停工一年多),新力翡翠湾, 梁溪官邸(停工半年)，见：[#900](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/900)
+
+- 河北-邢台-皓顺壹号院，见：[#940](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/940)
+
 - [贵州中天未来方舟环球谷C1组团烂尾](others/中天未来方舟环球谷C1组团.jpeg)
   ，这楼盘停工两年了，中天城投已经被接管，5月份建了群和业主协调，应该是没告知书的了，http://sc.house.hexun.com/News/details/id/198910.html
   。具体见：[#828](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/828)
@@ -615,7 +623,7 @@ sh ./run-validate.sh
 
 - [湖北省恒大供应商、小微企业断贷停工告知书](others/湖北省恒大供应商、小微企业断贷停工告知书.png)
 
--
+- 
 赣榆区香港城、华中郡府等：这些盘已有十年以上历史，不知道相关业主利益是否解决，因此借此机会也放上来。具体见：[大家来说说赣榆的烂尾楼_赣榆吧_百度贴吧.pdf](others/【图片】大家来说说赣榆的烂尾楼_赣榆吧_百度贴吧.pdf)
 。参考来源：https://tieba.baidu.com/p/4710142504
 
